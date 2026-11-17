@@ -13,7 +13,8 @@ func main() {
 	fmt.Println(version.Number)
 
 	if len(os.Args) < 2 {
-		fmt.Fprintln(os.Stderr, "Not enough argument, missing port number")
+		fmt.Fprintln(os.Stderr, "usage: agent <port>")
+		os.Exit(1)
 	}
 	portNumber, err := port.Parser(os.Args[1])
 
